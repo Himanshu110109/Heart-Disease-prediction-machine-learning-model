@@ -23,8 +23,10 @@ model = joblib.load("knn_heart.pkl")
 scaler = joblib.load("scaler.pkl")
 expected_columns = joblib.load("columns.pkl")
 
-st.title("""#Heart Stroke prediction model❤
-by Himanshu""")
+st.title("""
+#Heart Stroke prediction model
+by Himanshu
+""")
 st.markdown("Provide the following details")
 
 age = st.slider("Age", 18, 100, 40)
@@ -67,5 +69,6 @@ if st.button("Predict"):
     else:
 
         st.success("✅ Low Risk of Heart Disease")
+
 
 
