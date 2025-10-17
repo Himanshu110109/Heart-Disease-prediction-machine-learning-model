@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("HeartModel/knn_heart.pkl")
-scaler = joblib.load("HeartModel/scaler.pkl")
-expected_columns = joblib.load("HeartModel/columns.pkl")
+model = joblib.load("knn_heart.pkl")
+scaler = joblib.load("scaler.pkl")
+expected_columns = joblib.load("columns.pkl")
 
 st.title("Heart stroke prediction")
 st.markdown("Provide the following details")
@@ -47,4 +47,5 @@ if st.button("Predict"):
     if prediction == 1:
         st.error("⚠ High risk of Heart Disease")
     else:
+
         st.success("✅ Low Risk of Heart Disease")
