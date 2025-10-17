@@ -24,7 +24,7 @@ scaler = joblib.load("scaler.pkl")
 expected_columns = joblib.load("columns.pkl")
 
 st.title("""
-#Heart Stroke prediction model
+Heart Stroke prediction model
 by Himanshu
 """)
 st.markdown("Provide the following details")
@@ -69,6 +69,7 @@ if st.button("Predict"):
     else:
 
         st.success("✅ Low Risk of Heart Disease")
+
 
 
 
