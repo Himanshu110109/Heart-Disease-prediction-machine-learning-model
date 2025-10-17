@@ -2,6 +2,23 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+st.set_page_config(
+    page_title="Hearty",
+    page_icon="❤",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
+# Hide Streamlit's default menu and footer
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 model = joblib.load("knn_heart.pkl")
 scaler = joblib.load("scaler.pkl")
 expected_columns = joblib.load("columns.pkl")
@@ -49,3 +66,4 @@ if st.button("Predict"):
     else:
 
         st.success("✅ Low Risk of Heart Disease")
+
